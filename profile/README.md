@@ -151,7 +151,7 @@ Boot Timing deliberately remains about **timing**, rather than becoming a generi
 
 The wider project includes inspectors for areas such as:
 
-**Kernel Modules · Kernel Ring Buffer · Kernel Pressure · Kernel Tunables · Crypto Registry · Mounted Filesystems · Block Devices · Initramfs · Installed Software · Python Packages · Coredumps · File Handles · Environment Variables · D-Bus · IPC · Namespaces · Resolver · Timekeeping · Login state · Path inspection · Boot loaders**
+**Kernel Modules · Kernel Ring Buffer · Kernel Pressure · Kernel Tunables · Crypto Registry · Mounted Filesystems · Block Devices · Initramfs · Installed Software · Python Packages · Coredumps · File Handles · Environment Variables · D-Bus · IPC · Namespaces · Resolver · Timekeeping · Login state · Path inspection · Boot loaders · Autostart discovery · IPC and Namespace inspection**
 
 Some are mature daily-use tools; others are experimental applets used to explore a subsystem before their interfaces are frozen.
 
@@ -230,8 +230,6 @@ Current and future work explores areas such as:
 - process and kernel event tracing
 - access and permission analysis
 - file verification and integrity evidence
-- autostart discovery
-- IPC and namespace inspection
 - richer cross-inspector relationships inside the Suite
 
 The goal is not to reproduce another platform’s utility collection one-for-one.
