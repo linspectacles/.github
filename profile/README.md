@@ -40,7 +40,7 @@ A Linux-native live resource monitor for CPU, memory, disk and network activity.
 - GUI and TUI front ends
 - Optional, visibly provenance-marked privileged inspection
 
-Its design takes inspiration from serious diagnostic monitors while keeping Linux concepts such as RSS, PSS, USS, cgroups, `/proc`, sockets and device statistics intact.
+Its design takes inspiration from Windows Resmon.exe while keeping Linux concepts such as RSS, PSS, USS, cgroups, `/proc`, sockets and device statistics intact.
 
 ---
 
