@@ -12,22 +12,6 @@ The project includes standalone inspectors, live monitoring tools, and the **Lin
 
 ## Featured inspectors
 
-### Systemd Inspector
-
-A deep graphical inspector for `systemctl` and the systemd manager.
-
-- Runtime Units and Unit Files
-- System and User manager scopes
-- Unit state, load state, dependencies, ordering and reverse relationships
-- Unit-file provenance and configuration
-- Service runtime and outcome information
-- Timer, path, slice, scope and other unit-specific details
-- Cgroup, resource and sandbox context
-
-Systemd Inspector is designed to expose what systemd already knows without turning that information into a simplified or invented model.
-
----
-
 ### Resource Monitor
 
 A Linux-native live resource monitor for CPU, memory, disk and network activity.
@@ -44,17 +28,79 @@ Its design takes inspiration from Windows Resmon.exe while keeping Linux concept
 
 ---
 
-### Hardware Topology
+### Kernel Modules
 
-A structural view of how the machine is put together.
+A focused graphical inspector for the Linux kernel module subsystem, while keeping the underlying kernel terminology intact.
 
-- CPU packages, cores and logical CPUs
-- Cache topology
-- PCI devices
-- NUMA nodes
-- IOMMU groups
+- Loaded modules
+- Parameters
+- Dependencies
+- Taint state
+- Source information
+- Exported symbols
 
-Hardware Topology focuses on relationships, making it easier to understand how processors, memory domains and devices connect.
+Kernel Modules is one of the clearest examples of the LinSpectacles philosophy: take a dense Linux interface and make it approachable without abstracting it away.
+
+---
+
+### Systemd Inspector
+
+A deep graphical inspector for `systemctl` and the systemd manager.
+
+- Runtime Units and Unit Files
+- System and User manager scopes
+- Unit state, load state, dependencies, ordering and reverse relationships
+- Unit-file provenance and configuration
+- Service runtime and outcome information
+- Timer, path, slice, scope and other unit-specific details
+- Cgroup, resource and sandbox context
+
+Systemd Inspector is designed to expose what systemd already knows without turning that information into a simplified or invented model.
+
+---
+
+### Journal Inspector
+
+A focused graphical face for the systemd journal.
+
+- Boot selection
+- Time-period filtering
+- Priority thresholds
+- Search and metadata
+- Explicit scanning
+- Read-only inspection and export
+
+Journal Inspector stays separate from the Kernel Ring Buffer and other event sources so that each tool remains clear about where its data comes from.
+
+---
+
+### SELinux Inspector
+
+A dedicated graphical inspector for SELinux state and policy-facing information.
+
+- Status and enforcement state
+- Booleans
+- Process contexts
+- Recent AVC denials
+- File Context Check
+- Narrow, explicit privileged inspection where ordinary access is insufficient
+
+Privilege is never treated as permission to run the whole application as root.
+
+---
+
+### Scheduler Inspector
+
+A focused view of the Linux CPU scheduler.
+
+- Threads
+- CPUs
+- Scheduling domains
+- Scheduler policy and attributes
+- CPU affinity
+- Scheduler statistics and details
+
+Scheduler Inspector combines kernel and `/proc` scheduler information into a navigable read-only tool.
 
 ---
 
@@ -74,21 +120,6 @@ It is intended to make the cgroup filesystem understandable without hiding its a
 
 ---
 
-### Scheduler Inspector
-
-A focused view of the Linux CPU scheduler.
-
-- Threads
-- CPUs
-- Scheduling domains
-- Scheduler policy and attributes
-- CPU affinity
-- Scheduler statistics and details
-
-Scheduler Inspector combines kernel and `/proc` scheduler information into a navigable read-only tool.
-
----
-
 ### Interrupts Inspector
 
 A graphical view of hardware interrupts and SoftIRQ activity.
@@ -103,55 +134,11 @@ It turns traditionally dense interrupt tables into a structured inspector withou
 
 ---
 
-### SELinux Inspector
-
-A dedicated graphical inspector for SELinux state and policy-facing information.
-
-- Status and enforcement state
-- Booleans
-- Process contexts
-- Recent AVC denials
-- File Context Check
-- Narrow, explicit privileged inspection where ordinary access is insufficient
-
-Privilege is never treated as permission to run the whole application as root.
-
----
-
-### Journal Inspector
-
-A focused graphical face for the systemd journal.
-
-- Boot selection
-- Time-period filtering
-- Priority thresholds
-- Search and metadata
-- Explicit scanning
-- Read-only inspection and export
-
-Journal Inspector stays separate from the Kernel Ring Buffer and other event sources so that each tool remains clear about where its data comes from.
-
----
-
-### Boot Timing
-
-A specialist view of where boot time went.
-
-- Unit activation timing
-- Boot phases and milestones
-- Critical-path analysis
-- Per-unit timing details
-- Optional `/var/log/boot.log` supporting evidence
-
-Boot Timing deliberately remains about **timing**, rather than becoming a generic boot-troubleshooting application.
-
----
-
 ## More LinSpectacles applets
 
 The wider project includes inspectors for areas such as:
 
-**Kernel Modules · Kernel Ring Buffer · Kernel Pressure · Kernel Tunables · Crypto Registry · Mounted Filesystems · Block Devices · Initramfs · Installed Software · Python Packages · Coredumps · File Handles · Environment Variables · D-Bus · IPC · Namespaces · Resolver · Timekeeping · Login state · Path inspection · Boot loaders · Autostart discovery · IPC and Namespace inspection**
+**Boot timing · Kernel Ring Buffer · Kernel Pressure · Kernel Tunables · Crypto Registry · Mounted Filesystems · Block Devices · Initramfs · Installed Software · Python Packages · Coredumps · File Handles · Environment Variables · D-Bus · IPC · Namespaces · Resolver · Timekeeping · Login state · Path inspection · Boot loaders · Autostart discovery · IPC and Namespace inspection**
 
 Some are mature daily-use tools; others are experimental applets used to explore a subsystem before their interfaces are frozen.
 
