@@ -6,143 +6,49 @@ LinSpectacles is an open-source family of graphical Linux inspectors built aroun
 
 Rather than hiding Linux behind generic dashboards, LinSpectacles gives familiar system interfaces a clear graphical face — while preserving their native terminology, provenance, and boundaries.
 
-The project includes standalone inspectors, live monitoring tools, and the **LinSpectacles Suite**, which brings them together without making the individual applets dependent on the Suite.
+The project includes standalone inspectors, live monitoring tools, and the **LinSpectacles Hub**, which brings them together without making the individual applets dependent on the Hub.
 
 ---
 
-## Featured inspectors
+## Applets
 
-### Resource Monitor
+Each LinSpectacles applet is independently useful and keeps its own Linux subsystem, acquisition sources and scope boundaries explicit.
 
-A Linux-native live resource monitor for CPU, memory, disk and network activity.
-
-- Processes and services
-- Associated file handles and mapped modules
-- Physical-memory and per-process memory detail
-- Disk activity and storage devices
-- TCP connections, UDP endpoints and listening/bound ports
-- GUI and TUI front ends
-- Optional, visibly provenance-marked privileged inspection
-
-Its design takes inspiration from Windows Resmon.exe while keeping Linux concepts such as RSS, PSS, USS, cgroups, `/proc`, sockets and device statistics intact.
-
----
-
-### Kernel Modules
-
-A focused graphical inspector for the Linux kernel module subsystem, while keeping the underlying kernel terminology intact.
-
-- Loaded modules
-- Parameters
-- Dependencies
-- Taint state
-- Source information
-- Exported symbols
-
-Kernel Modules is one of the clearest examples of the LinSpectacles philosophy: take a dense Linux interface and make it approachable without abstracting it away.
-
----
-
-### Systemd Inspector
-
-A deep graphical inspector for `systemctl` and the systemd manager.
-
-- Runtime Units and Unit Files
-- System and User manager scopes
-- Unit state, load state, dependencies, ordering and reverse relationships
-- Unit-file provenance and configuration
-- Service runtime and outcome information
-- Timer, path, slice, scope and other unit-specific details
-- Cgroup, resource and sandbox context
-
-Systemd Inspector is designed to expose what systemd already knows without turning that information into a simplified or invented model.
+- **[Autostart Inspector](https://github.com/linspectacles/autostart-inspector)** — Inventories configured automatic-start and scheduled-launch entries across systemd, XDG autostart, cron, anacron and supported legacy mechanisms.
+- **[Block Devices](https://github.com/linspectacles/block-devices)** — Inspects Linux block-device topology, geometry and mappings from sysfs, with explicit selected-device signature inspection.
+- **[Boot Loaders](https://github.com/linspectacles/boot-loaders)** — Structures boot-loader, ESP and EFI state reported by `bootctl`, with optional narrow privileged visibility.
+- **[Boot Timing](https://github.com/linspectacles/boot-timing)** — Analyses systemd boot timing, per-unit durations, boot phases, milestones and critical paths, with `boot.log` as supporting evidence.
+- **[Cgroups Inspector](https://github.com/linspectacles/cgroups-inspector)** — Browses the cgroup v2 hierarchy, membership, controllers, limits, accounting, events and pressure without becoming a cgroup-management tool.
+- **[Coredumps Inspector](https://github.com/linspectacles/coredumps-inspector)** — Inspects coredump records and metadata visible through `systemd-coredump` / `coredumpctl`.
+- **[Crypto Registry](https://github.com/linspectacles/crypto-registry)** — Exposes the Linux Kernel Crypto API registry reported by `/proc/crypto`, preserving separate registered implementations and their metadata.
+- **[D-Bus Inspector](https://github.com/linspectacles/dbus-inspector)** — Explores system and session D-Bus names, connections, object paths, interfaces and declared members without activating services or invoking methods.
+- **[Environment Variables](https://github.com/linspectacles/environment-variables)** — Inspects the environment inherited by the LinSpectacles process, including clearer presentation of path-like values and optional sensitive-value hiding.
+- **[Files Handles](https://github.com/linspectacles/files-handles)** — Reports global Linux file-description and inode-allocation state from procfs.
+- **[Hardware Topology](https://github.com/linspectacles/hardware-topology)** — Maps CPU/cache locality, PCI devices, NUMA structure, IOMMU groups and kernel-reported CPU vulnerability state.
+- **[Initramfs Inspector](https://github.com/linspectacles/initramfs-inspector)** — Discovers installed initramfs/initrd images, identifies image properties and can explicitly inspect contents through supported initramfs tooling.
+- **[Installed Software](https://github.com/linspectacles/installed-software)** — Explicitly scans distribution packages, Flatpak applications, Snap packages and AppImages discovered in configured folders.
+- **[Interrupts Inspector](https://github.com/linspectacles/interrupts-inspector)** — Inspects hardware IRQ routing and SoftIRQ counters with per-CPU distribution and available kernel/device context.
+- **[IPC Inspector](https://github.com/linspectacles/ipc-inspector)** — Browses Linux pipes, FIFOs, Unix-domain sockets, POSIX message queues and System V IPC objects.
+- **[Journal Inspector](https://github.com/linspectacles/journal-inspector)** — Provides structured Journal Entries and Boot List inventories with explicit acquisition controls, filtering and retained journal metadata.
+- **[Kernel Modules](https://github.com/linspectacles/kernel-modules)** — Inspects loaded kernel modules using `/proc/modules`, `modinfo` and sysfs, including relationships, parameters, taint context and selected-module symbols.
+- **[Kernel Pressure](https://github.com/linspectacles/kernel-pressure)** — Presents Linux Pressure Stall Information for CPU, memory and I/O directly from the kernel PSI interfaces.
+- **[Kernel Ring Buffer](https://github.com/linspectacles/kernel-ring-buffer)** — Inspects the native kernel printk ring buffer from `/dev/kmsg`, preserving record fields that formatted output can hide.
+- **[Kernel Tunables](https://github.com/linspectacles/kernel-tunables)** — Safely browses the runtime kernel parameter namespace exposed through `/proc/sys` without modifying tunables.
+- **[Login Inspector](https://github.com/linspectacles/login-inspector)** — Inspects the current `systemd-logind` model of sessions, users, seats and manager properties.
+- **[Mounted Filesystems](https://github.com/linspectacles/mounted-filesystems)** — Inventories mounted filesystems from `/proc/self/mountinfo`, adds capacity data and exposes supported ext4, XFS and Btrfs structural details on demand.
+- **[Namespace Inspector](https://github.com/linspectacles/namespace-inspector)** — Browses Linux namespace identities and process membership using procfs references and nsfs relationship ioctls.
+- **[Path Inspector](https://github.com/linspectacles/path-inspector)** — Inspects a user-selected filesystem path through separate Access, Integrity and Usage views with explicit recursive operations.
+- **[Power and Thermal Inspector](https://github.com/linspectacles/power-thermal-inspector)** — Provides point-in-time inspection of thermal zones, cooling devices, CPU-frequency policies, power supplies and kernel power-cap domains.
+- **[Python Packages](https://github.com/linspectacles/python-packages)** — Explicitly inventories Python distributions visible to the running environment through `importlib.metadata`.
+- **[Resolver Inspector](https://github.com/linspectacles/resolver-inspector)** — Inspects Linux name-resolution configuration and state through active systemd-resolved data or conventional resolver/NSS fallback context.
+- **[Resource Monitor](https://github.com/linspectacles/linux-resmon)** — Live CPU, memory, disk and network monitoring with Linux-native process, service, handle, memory, storage and socket views plus a parallel TUI.
+- **[Scheduler Inspector](https://github.com/linspectacles/scheduler-inspector)** — Inspects per-thread scheduling policy and affinity, scheduler accounting, per-CPU schedstat state, scheduling domains and global scheduler context.
+- **[SELinux Inspector](https://github.com/linspectacles/selinux-inspector)** — Inspects SELinux status, contexts, policy inventories, recent denials and file-context expectations with optional narrow helper-backed visibility.
+- **[Systemd Inspector](https://github.com/linspectacles/systemd-inspector)** — Inspects runtime units and unit files across system and user managers, including relationships, provenance, cgroups, runtime details and systemd security exposure data.
+- **[Timekeeping Inspector](https://github.com/linspectacles/timekeeping-inspector)** — Inspects Linux clocks, the active kernel clocksource, synchronization/time-discipline state and RTC devices.
 
 ---
 
-### Journal Inspector
-
-A focused graphical face for the systemd journal.
-
-- Boot selection
-- Time-period filtering
-- Priority thresholds
-- Search and metadata
-- Explicit scanning
-- Read-only inspection and export
-
-Journal Inspector stays separate from the Kernel Ring Buffer and other event sources so that each tool remains clear about where its data comes from.
-
----
-
-### SELinux Inspector
-
-A dedicated graphical inspector for SELinux state and policy-facing information.
-
-- Status and enforcement state
-- Booleans
-- Process contexts
-- Recent AVC denials
-- File Context Check
-- Narrow, explicit privileged inspection where ordinary access is insufficient
-
-Privilege is never treated as permission to run the whole application as root.
-
----
-
-### Scheduler Inspector
-
-A focused view of the Linux CPU scheduler.
-
-- Threads
-- CPUs
-- Scheduling domains
-- Scheduler policy and attributes
-- CPU affinity
-- Scheduler statistics and details
-
-Scheduler Inspector combines kernel and `/proc` scheduler information into a navigable read-only tool.
-
----
-
-### Cgroups Inspector
-
-A read-only cgroup v2-first browser for the Linux control-group hierarchy.
-
-- Hierarchical cgroup tree
-- Processes and threads
-- Available and enabled controllers
-- CPU, memory and PID limits
-- `cgroup.stat` descendant information
-- Raw and interpreted controller values
-- Source-aware metadata
-
-It is intended to make the cgroup filesystem understandable without hiding its actual kernel semantics.
-
----
-
-### Interrupts Inspector
-
-A graphical view of hardware interrupts and SoftIRQ activity.
-
-- Hardware IRQ inventory
-- SoftIRQ activity by CPU
-- IRQ metadata
-- Kernel IRQ sources
-- PCI MSI/MSI-X context where available
-
-It turns traditionally dense interrupt tables into a structured inspector without changing the underlying meaning.
-
----
-
-## More LinSpectacles applets
-
-The wider project includes inspectors for areas such as:
-
-**Boot timing · Kernel Ring Buffer · Kernel Pressure · Kernel Tunables · Crypto Registry · Mounted Filesystems · Block Devices · Initramfs · Installed Software · Python Packages · Coredumps · File Handles · Environment Variables · D-Bus · IPC · Namespaces · Resolver · Timekeeping · Login state · Path inspection · Boot loaders · Autostart discovery · IPC and Namespace inspection**
-
-Some are mature daily-use tools; others are experimental applets used to explore a subsystem before their interfaces are frozen.
-
----
 
 ## Design principles
 
@@ -186,13 +92,13 @@ LinSpectacles applets share a common interaction language — inventory, search/
 
 ---
 
-## LinSpectacles Suite
+## LinSpectacles Hub
 
-The **LinSpectacles Suite** is the optional host/workbench for the applet family.
+The **LinSpectacles Hub** is the optional host/workbench for the applet family.
 
-The applets remain independently useful. The Suite adds shared navigation and optional modules without turning standalone inspectors into tightly coupled components.
+The applets remain independently useful. The Hub adds shared navigation and optional modules without turning standalone inspectors into tightly coupled components.
 
-Suite modules include capabilities such as:
+Hub modules include capabilities such as:
 
 - **Applet Organizer**
 - **Boot Environment**
@@ -203,7 +109,7 @@ Suite modules include capabilities such as:
 
 The architectural rule is simple:
 
-> **Inspectors inspect Linux. Suite modules enhance the workbench.**
+> **Inspectors inspect Linux. Hub modules enhance the workbench.**
 
 ---
 
@@ -217,7 +123,7 @@ Current and future work explores areas such as:
 - process and kernel event tracing
 - access and permission analysis
 - file verification and integrity evidence
-- richer cross-inspector relationships inside the Suite
+- richer cross-inspector relationships inside the Hub
 
 The goal is not to reproduce another platform’s utility collection one-for-one.
 
@@ -227,7 +133,7 @@ The goal is to build the inspection toolkit that **Linux itself naturally sugges
 
 ## Repositories
 
-Browse the organisation for individual applets, Suite components, experiments and source releases:
+Browse the organisation for individual applets, Hub components, experiments and source releases:
 
 **https://github.com/linspectacles/**
 
