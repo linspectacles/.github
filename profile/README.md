@@ -151,6 +151,7 @@ Current direction includes:
 - **Greater family-wide parity and consistency** — continuing to align navigation, metadata, provenance, privilege handling and interaction patterns without erasing the specialist character of each inspector.
 
 The next stage is therefore not simply about adding more inspectors. It is about making LinSpectacles a **more connected, portable and broadly distributable inspection ecosystem** while preserving the focused boundaries of the individual tools.
+
 ---
 
 ## Repositories
