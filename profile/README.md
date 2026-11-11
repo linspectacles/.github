@@ -19,8 +19,16 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 ### Hardware
 
 - **[Block Devices](https://github.com/linspectacles/block-devices)** — Inspects Linux block-device topology, geometry and mappings from sysfs, with explicit selected-device signature inspection.
-- **[Hardware Topology](https://github.com/linspectacles/hardware-topology)** — Maps CPU/cache locality, PCI devices, NUMA structure, IOMMU groups and kernel-reported CPU vulnerability state.
+- **[Hardware Topology](https://github.com/linspectacles/hardware-topology)** — Maps CPU/cache locality, PCI devices, NUMA structure and IOMMU groups.
+- **[GPU Inspector](https://github.com/linspectacles/gpu-inspector)** — Inspects Linux GPU/DRM devices, nodes, visible process clients, per-client memory regions and reported cumulative engine counters from sysfs and procfs.
+- **[Input Devices](https://github.com/linspectacles/input-devices)** — Inspects Linux input devices, event-node metadata, kernel-exposed capabilities and hardware/driver relationships without capturing live input events.
 - **[Power and Thermal Inspector](https://github.com/linspectacles/power-thermal-inspector)** — Provides point-in-time inspection of thermal zones, cooling devices, CPU-frequency policies, power supplies and kernel power-cap domains.
+
+
+### Firmware
+
+- **[Firmware Inspector](https://github.com/linspectacles/firmware-inspector)** — Inspects platform firmware identity, DMI/SMBIOS, ACPI tables, EFI variables, ESRT resources, CPU microcode evidence, Device Tree and local fwupd device/update state.
+- **[TPM Inspector](https://github.com/linspectacles/tpm-inspector)** — Inspects TPM devices, exposed PCR snapshots, measured-boot event-log availability and kernel-exposed TPM capability evidence.
 
 ### Bootloader
 
@@ -29,6 +37,7 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 ### Kernel
 
 - **[Cgroups Inspector](https://github.com/linspectacles/cgroups-inspector)** — Browses the cgroup v2 hierarchy, membership, controllers, limits, accounting, events and pressure without becoming a cgroup-management tool.
+- **[CPU Vulnerabilities](https://github.com/linspectacles/cpu-vulnerabilities)** — Reports CPU vulnerability and mitigation status directly from `/sys/devices/system/cpu/vulnerabilities`, preserving the kernel's own status text.
 - **[Crypto Registry](https://github.com/linspectacles/crypto-registry)** — Exposes the Linux Kernel Crypto API registry reported by `/proc/crypto`, preserving separate registered implementations and their metadata.
 - **[Interrupts Inspector](https://github.com/linspectacles/interrupts-inspector)** — Inspects hardware IRQ routing and SoftIRQ counters with per-CPU distribution and available kernel/device context.
 - **[IPC Inspector](https://github.com/linspectacles/ipc-inspector)** — Browses Linux pipes, FIFOs, Unix-domain sockets, POSIX message queues and System V IPC objects.
@@ -60,12 +69,23 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 ### Shell & Terminal
 
 - **[Environment Variables](https://github.com/linspectacles/environment-variables)** — Inspects the environment inherited by the LinSpectacles process, including clearer presentation of path-like values and optional sensitive-value hiding.
+- **[TTY Inspector](https://github.com/linspectacles/tty-inspector)** — Inspects Linux TTY/PTY devices, registered TTY drivers and line disciplines, and visible process-to-terminal relationships.
 
 ### Filesystem
 
-- **[Files Handles](https://github.com/linspectacles/files-handles)** — Reports global Linux file-description and inode-allocation state from procfs.
+- **[File Handles](https://github.com/linspectacles/file-handles)** — Reports global Linux file-description and inode-allocation state from procfs.
 - **[Mounted Filesystems](https://github.com/linspectacles/mounted-filesystems)** — Inventories mounted filesystems from `/proc/self/mountinfo`, adds capacity data and exposes supported ext4, XFS and Btrfs structural details on demand.
 - **[Path Inspector](https://github.com/linspectacles/path-inspector)** — Inspects a user-selected filesystem path through separate Access, Integrity and Usage views with explicit recursive operations.
+
+
+### Display Server
+
+- **[Display Server Inspector](https://github.com/linspectacles/display-server)** — Inspects the current Wayland/X11 graphical session, display-stack evidence, reported outputs, modes and protocols without changing display configuration.
+
+### Desktop Environment
+
+- **[Desktop Integration](https://github.com/linspectacles/desktop-integration)** — Inspects freedesktop desktop-entry registration and MIME association/default resolution across XDG configuration layers.
+- **[XDG Portals](https://github.com/linspectacles/xdg-portals)** — Inspects the XDG Desktop Portal frontend/backend model, installed backend descriptors, interface declarations, backend-selection configuration and already-running portal services.
 
 ### Applications
 
