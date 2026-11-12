@@ -156,6 +156,16 @@ The architectural rule is simple:
 
 > **Inspectors inspect Linux. Hub modules enhance the workbench.**
 
+<p align="center">
+  <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/linspectacles-hub.png">
+    <img
+      src="https://raw.githubusercontent.com/brunonlinespace/brunonlinespace/main/linspectacles/linspectacles-hub.png"
+      alt="LinSpectacles Hub screenshot"
+      width="900"
+    >
+  </a>
+</p>
+
 ---
 
 ## Project direction
