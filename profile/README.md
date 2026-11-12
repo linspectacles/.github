@@ -80,7 +80,7 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 
 ### Display Server
 
-- **[Display Server Inspector](https://github.com/linspectacles/display-server)** — Inspects the current Wayland/X11 graphical session, display-stack evidence, reported outputs, modes and protocols without changing display configuration.
+- **[Display Server](https://github.com/linspectacles/display-server)** — Inspects the current Wayland/X11 graphical session, display-stack evidence, reported outputs, modes and protocols without changing display configuration.
 
 ### Desktop Environment
 
