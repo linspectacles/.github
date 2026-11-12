@@ -141,6 +141,16 @@ LinSpectacles applets share a common interaction language — inventory, search/
 
 The **LinSpectacles Hub** is the optional host/workbench for the applet family.
 
+<p align="center">
+  <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/linspectacles-hub.png">
+    <img
+      src="https://raw.githubusercontent.com/brunonlinespace/brunonlinespace/main/linspectacles/linspectacles-hub.png"
+      alt="LinSpectacles Hub screenshot"
+      width="900"
+    >
+  </a>
+</p>
+
 The applets remain independently useful. The Hub adds shared navigation and optional modules without turning standalone inspectors into tightly coupled components.
 
 Hub modules include capabilities such as:
@@ -155,16 +165,6 @@ Hub modules include capabilities such as:
 The architectural rule is simple:
 
 > **Inspectors inspect Linux. Hub modules enhance the workbench.**
-
-<p align="center">
-  <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/linspectacles-hub.png">
-    <img
-      src="https://raw.githubusercontent.com/brunonlinespace/brunonlinespace/main/linspectacles/linspectacles-hub.png"
-      alt="LinSpectacles Hub screenshot"
-      width="900"
-    >
-  </a>
-</p>
 
 ---
 
