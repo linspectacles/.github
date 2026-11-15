@@ -19,8 +19,8 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 ### Hardware
 
 - **[Block Devices](https://github.com/linspectacles/block-devices)** — Inspects Linux block-device topology, geometry and mappings from sysfs, with explicit selected-device signature inspection.
-- **[Hardware Topology](https://github.com/linspectacles/hardware-topology)** — Maps CPU/cache locality, PCI devices, NUMA structure and IOMMU groups.
 - **[GPU Inspector](https://github.com/linspectacles/gpu-inspector)** — Inspects Linux GPU/DRM devices, nodes, visible process clients, per-client memory regions and reported cumulative engine counters from sysfs and procfs.
+- **[Hardware Topology](https://github.com/linspectacles/hardware-topology)** — Maps CPU/cache locality, PCI devices, NUMA structure and IOMMU groups.
 - **[Input Devices](https://github.com/linspectacles/input-devices)** — Inspects Linux input devices, event-node metadata, kernel-exposed capabilities and hardware/driver relationships without capturing live input events.
 - **[Power and Thermal Inspector](https://github.com/linspectacles/power-thermal-inspector)** — Provides point-in-time inspection of thermal zones, cooling devices, CPU-frequency policies, power supplies and kernel power-cap domains.
 
@@ -74,6 +74,7 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 ### Filesystem
 
 - **[File Handles](https://github.com/linspectacles/file-handles)** — Reports global Linux file-description and inode-allocation state from procfs.
+- **[Filesystem Details](https://github.com/linspectacles/filesystem-details)** — Deeply inspects a selected mounted ext4, XFS or Btrfs filesystem through filesystem-native structural, allocation and explicitly acquired physical-map interfaces.
 - **[Mounted Filesystems](https://github.com/linspectacles/mounted-filesystems)** — Inventories mounted filesystems from `/proc/self/mountinfo`, adds capacity data and exposes supported ext4, XFS and Btrfs structural details on demand.
 - **[Path Inspector](https://github.com/linspectacles/path-inspector)** — Inspects a user-selected filesystem path through separate Access, Integrity and Usage views with explicit recursive operations.
 
@@ -91,6 +92,10 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 
 - **[Installed Software](https://github.com/linspectacles/installed-software)** — Explicitly scans distribution packages, Flatpak applications, Snap packages and AppImages discovered in configured folders.
 - **[Python Packages](https://github.com/linspectacles/python-packages)** — Explicitly inventories Python distributions visible to the running environment through `importlib.metadata`.
+
+### Multi-Layer
+
+- **[Problem Finder](https://github.com/linspectacles/problem-finder)** — Explicitly scans a fixed 90-check catalogue across 15 Linux problem categories, with searchable/filterable findings and optional narrow helper-backed visibility.
 
 ---
 
