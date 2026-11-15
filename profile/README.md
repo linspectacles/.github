@@ -144,7 +144,7 @@ LinSpectacles applets share a common interaction language — inventory, search/
 
 ## LinSpectacles Hub
 
-The **LinSpectacles Hub** is the optional host/workbench for the applet family.
+The **[LinSpectacles Hub](https://github.com/linspectacles/linspectacles-hub)** is the optional host/workbench for the applet family.
 
 <p align="center">
   <a href="https://github.com/brunonlinespace/brunonlinespace/blob/main/linspectacles/linspectacles-hub.png">
