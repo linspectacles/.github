@@ -65,6 +65,7 @@ The index follows the **Linux system-layer model used by Applet Organizer**. Emp
 - **[Login Inspector](https://github.com/linspectacles/login-inspector)** — Inspects the current `systemd-logind` model of sessions, users, seats and manager properties.
 - **[Resolver Inspector](https://github.com/linspectacles/resolver-inspector)** — Inspects Linux name-resolution configuration and state through active systemd-resolved data or conventional resolver/NSS fallback context.
 - **[Resource Monitor](https://github.com/linspectacles/linux-resmon)** — Live CPU, memory, disk and network monitoring with Linux-native process, service, handle, memory, storage and socket views plus a parallel TUI.
+- **[Virtualisation Inspector](https://github.com/linspectacles/virtualisation-inspector)** — Inspects Linux virtualisation capabilities, read-only libvirt connections, managed virtual machines and guest-environment evidence.
 
 ### Shell & Terminal
 
@@ -156,7 +157,7 @@ The **[LinSpectacles Hub](https://github.com/linspectacles/linspectacles-hub)** 
   </a>
 </p>
 
-The applets remain independently useful. The Hub adds shared navigation and optional modules without turning standalone inspectors into tightly coupled components.
+The applets remain independently useful. The Hub adds shared navigation and optional modules without turning standalone inspectors into tightly coupled components. The six official Hub Modules are maintained in the **[LinSpectacles Modules](https://github.com/linspectacles/linspectacles-modules)** repository.
 
 Hub modules include capabilities such as:
 
