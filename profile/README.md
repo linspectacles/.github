@@ -174,6 +174,30 @@ The architectural rule is simple:
 
 ---
 
+## Installing LinSpectacles
+
+LinSpectacles is published for Fedora through COPR. Enable the repository:
+
+```bash
+sudo dnf copr enable brunonlinespace/linspectacles
+```
+
+Install the complete suite — the Hub, official Hub Modules and all official applets:
+
+```bash
+sudo dnf install linspectacles-full
+```
+
+The metapackages can also be installed separately:
+
+- `linspectacles` — installs the Hub and recommends the official Hub Modules.
+- `linspectacles-applets` — installs the complete official applet collection.
+- `linspectacles-full` — installs the complete LinSpectacles suite through `linspectacles` and `linspectacles-applets`.
+
+Individual Hub, module and applet packages remain independently installable. Metapackage sources are maintained in **[LinSpectacles Metapackages](https://github.com/linspectacles/linspectacles-metapackages)**.
+
+---
+
 ## Project direction
 
 LinSpectacles has moved beyond establishing its core Linux inspection coverage. Current development is increasingly about making the inspector family work together more intelligently, reach more platforms, and become easier to use and distribute.
